@@ -39,10 +39,10 @@ export class WebpackComponentResolver {
       return this._webpackAsyncModules.fetch(componentType)
         .then(cmpFile => {
           let component = this._resolveExports(cmpFile, componentType);
-          return this._resolver.resolveComponent(component);
+          return this._resolver.resolveComponentFactory(component);
         });
     }
-    return this._resolver.resolveComponent(componentType);
+    return this._resolver.resolveComponentFactory(componentType);
   }
 
   clearCache(): void {}
